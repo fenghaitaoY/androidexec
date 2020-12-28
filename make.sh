@@ -21,7 +21,7 @@ echo "############# ndk-build x32 ###############"
 cp mk/Android-x32.mk jni/Android.mk
 cp mk/Application-x32.mk jni/Application.mk
 
-/opt/android-ndk-r10/ndk-build -B
+ndk-build -B
 if [ -e "release/lib" ]
 then
     echo "##release file is already create!##"
@@ -29,7 +29,7 @@ else
     echo "##create release/lib##"
     mkdir -p release/lib
 fi
-cp obj/local/armeabi/apptest release/lib
+cp obj/local/armeabi-v7a/iwpriv release/lib
 
 echo "############ ndk-build x32 end ############"
 echo ""
@@ -41,7 +41,7 @@ echo "############# ndk-build x64 ###############"
 cp mk/Android-x64.mk jni/Android.mk
 cp mk/Application-x64.mk jni/Application.mk
 
-/opt/android-ndk-r10/ndk-build -B
+ndk-build -B
 
 if [ -e "release/lib64" ]
 then
@@ -51,6 +51,6 @@ else
     mkdir -p release/lib64
 fi
 
-cp obj/local/arm64-v8a/apptest release/lib64
+cp obj/local/arm64-v8a/iwpriv release/lib64
 echo "############ ndk-build x64 end ############"
 fi
